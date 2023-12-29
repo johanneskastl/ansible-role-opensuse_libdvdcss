@@ -18,3 +18,8 @@
 
 - name: 'Flush handlers'
   ansible.builtin.meta: flush_handlers
+
+- name: 'Install the libdvdcss package'
+  community.general.zypper:
+    name: 'libdvdcss2'
+    state: 'present'
