@@ -1,6 +1,0 @@
----
-# opensuse_libdvdcss/handlers/main.yml
-
-- name: 'Zypper refresh'
-  ansible.builtin.command:
-    cmd: 'zypper refresh'

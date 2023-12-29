@@ -13,13 +13,10 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  notify:
-    - 'Zypper refresh'
-
-- name: 'Flush handlers'
-  ansible.builtin.meta: flush_handlers
 
 - name: 'Install the libdvdcss package'
   community.general.zypper:
     name: 'libdvdcss2'
     state: 'present'
+    disable_recommends: true
+    update_cache: true
