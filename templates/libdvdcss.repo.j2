@@ -1,0 +1,16 @@
+{% if ansible_distribution == "openSUSE Tumbleweed" %}
+[libdvdcss_openSUSE_Tumbleweed]
+{% else %}
+[libdvdcss_openSUSE_Leap]
+{% endif %}
+name=libdvdcss repository
+enabled=1
+autorefresh=1
+{% if ansible_distribution == "openSUSE Tumbleweed" %}
+baseurl=https://opensuse-guide.org/repo/openSUSE_Tumbleweed/
+{% else %}
+baseurl=https://opensuse-guide.org/repo/openSUSE_Leap_$releasever/
+{% endif %}
+path=/
+type=rpm-md
+keeppackages=0
