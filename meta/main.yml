@@ -1,0 +1,21 @@
+galaxy_info:
+  role_name: 'opensuse_libdvdcss'
+  namespace: 'johanneskastl'
+  author: 'Johannes Kastl'
+  description: 'Install libdvdcss on OpenSUSE Tumbleweed or Leap'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: '2.12'
+
+  platforms:
+    - name: opensuse
+      versions:
+        - all
+    - name: SLES
+      versions:
+        - all
+
+  galaxy_tags: []
+
+dependencies: []
