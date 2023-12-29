@@ -1,0 +1,20 @@
+---
+# opensuse_libdvdcss/tasks/main.yml
+
+- name: 'Add libdvdcss GPG key'
+  ansible.builtin.rpm_key:
+    state: 'present'
+    key: 'https://opensuse-guide.org/repo/openSUSE_Tumbleweed/repodata/repomd.xml.key'
+
+- name: 'Add libdvdcss repository'
+  ansible.builtin.template:
+    src: 'libdvdcss.repo.j2'
+    dest: '/etc/zypp/repos.d/libdvdcss.repo'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  notify:
+    - 'Zypper refresh'
+
+- name: 'Flush handlers'
+  ansible.builtin.meta: flush_handlers
